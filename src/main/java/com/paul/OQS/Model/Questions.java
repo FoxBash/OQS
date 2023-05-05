@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -18,4 +20,8 @@ public class Questions {
     private String questionText;
     @ManyToOne
     private Admin admin;
+
+    @OneToMany(mappedBy = "questions")
+    @JoinColumn(name = "answer_id")
+    private List<Answer> answer;
 }
