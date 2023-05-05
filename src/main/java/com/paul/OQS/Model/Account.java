@@ -18,8 +18,11 @@ public class Account {
     private String firstName;
     @Column(name = "LastName")
     private String lastName;
-    @Column(name = "Email")
+    @Column(name = "Email",nullable = false,unique = true)
     private String email;
-    @Column(name = "Password")
+    @Column(name = "Password",nullable = false)
     private String password;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "admin_id", referencedColumnName = "id")
+    private Admin admin;
 }
