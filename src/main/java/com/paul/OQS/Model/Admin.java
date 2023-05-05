@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -25,4 +27,7 @@ public class Admin {
     @OneToOne(mappedBy = "admin", cascade = CascadeType.ALL)
     @Column(nullable = false)
     private Account account;
+    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
+    @JoinColumn(name = "Admin_id")
+    private List<Questions> questions;
 }
