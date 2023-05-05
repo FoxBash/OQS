@@ -14,7 +14,7 @@ public class Questions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "Questions",nullable = false)
+    @Column(name = "Question",nullable = false)
     private String questionText;
     @ManyToOne
     private Admin admin;
