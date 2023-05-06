@@ -22,9 +22,12 @@ public class Account {
     private String email;
     @Column(name = "Password",nullable = false)
     private String password;
+    @Column(name = "Telephone",nullable = false)
+    private String telephone;
+    @Column(name = "Address")
+    private String address;
     @Column(name = "Score")
     private int score = 0;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "admin_id", referencedColumnName = "id")
-    private Admin admin;
+
+
 }

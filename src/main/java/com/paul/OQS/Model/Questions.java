@@ -18,9 +18,6 @@ public class Questions {
     private Long id;
     @Column(name = "Question",nullable = false)
     private String questionText;
-    @ManyToOne
-    private Admin admin;
-
     @OneToMany(mappedBy = "questions")
     @JoinColumn(name = "answer_id")
     private List<Answer> answer;

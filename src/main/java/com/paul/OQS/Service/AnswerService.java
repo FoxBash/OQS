@@ -1,9 +1,14 @@
 package com.paul.OQS.Service;
 
-import com.paul.OQS.Repository.AnswerRepo;
-import org.springframework.stereotype.Service;
+import com.paul.OQS.Model.Answer;
 
-@Service
-public class AnswerService {
-    private AnswerRepo answerRepo;
+import java.util.List;
+
+public interface AnswerService {
+    void createAnswer(Answer answer);
+    Iterable<Answer> getAllAnswersByQuestionId(Long questionId);
+    Iterable<Answer> getAllAnswer();
+    void deleteAnswers();
+    void deleteAnswerById(Long answerId);
+
 }

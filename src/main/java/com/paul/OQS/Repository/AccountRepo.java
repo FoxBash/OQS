@@ -1,10 +1,9 @@
 package com.paul.OQS.Repository;
 
-import com.paul.OQS.Model.Answer;
+import com.paul.OQS.Model.Account;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AnswerRepo extends CrudRepository<Answer, Long> {
-     void deleteAnswerById();
+public interface AccountRepo extends CrudRepository<Account,Long> {
 }
