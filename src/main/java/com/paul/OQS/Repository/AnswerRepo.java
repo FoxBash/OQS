@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AnswerRepo extends CrudRepository<Answer, Long> {
-     void deleteAnswerById();
 }

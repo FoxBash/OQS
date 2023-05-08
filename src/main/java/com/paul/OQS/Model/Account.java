@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "Account")
+@AllArgsConstructor
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,4 +30,13 @@ public class Account {
     private int score = 0;
 
 
+    public Account(String firstName, String lastName, String email, String password, String telephone, String address, int score) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.telephone = telephone;
+        this.address = address;
+        this.score = score;
+    }
 }

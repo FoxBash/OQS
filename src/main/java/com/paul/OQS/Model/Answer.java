@@ -17,7 +17,11 @@ public class Answer {
     private Long id;
     @Column(nullable = false,name = "Answers")
     private String text;
-    @ManyToOne
-    @Column(nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Question_id")
     private Questions questions;
+
+    public Answer(String text) {
+        this.text = text;
+    }
 }

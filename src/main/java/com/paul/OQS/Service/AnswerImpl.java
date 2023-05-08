@@ -11,11 +11,9 @@ import java.util.Optional;
 @Service
 public class AnswerImpl implements AnswerService {
     private AnswerRepo answerRepo;
-    private final QuestionService questionService;
     @Autowired
-    public AnswerImpl(AnswerRepo answerRepo, QuestionService questionService) {
+    public AnswerImpl(AnswerRepo answerRepo) {
         this.answerRepo = answerRepo;
-        this.questionService = questionService;
     }
 
     @Override
@@ -38,6 +36,6 @@ public class AnswerImpl implements AnswerService {
 
     @Override
     public void deleteAnswerById(Long answerId) {
-        answerRepo.deleteAnswerById();
+        answerRepo.deleteById(answerId);
     }
 }

@@ -38,7 +38,7 @@ public class QuestionImpl implements QuestionService {
 
     @Override
     public Iterable<Questions> findAllQuestionByName(String question) {
-        return questionRepo.findAllQuestionsByName(question);
+        return questionRepo.findAllQuestionsByText(question);
     }
 
 
