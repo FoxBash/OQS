@@ -18,14 +18,10 @@ public class Questions {
     private Long id;
     @Column(name = "Question",nullable = false)
     private String text;
-    @OneToMany(mappedBy = "questions",
-            orphanRemoval = true,
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
-    private List<Answer> answer;
-
-    public Questions(String text, List<Answer> answer) {
-        this.text = text;
-        this.answer = answer;
-    }
+//    @OneToMany(mappedBy = "questions",
+//            orphanRemoval = true,
+//            fetch = FetchType.LAZY,
+//            cascade = CascadeType.ALL)
+//    private List<Answer> answer;
+    
 }
