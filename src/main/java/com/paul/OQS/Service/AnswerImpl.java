@@ -19,19 +19,9 @@ public class AnswerImpl implements AnswerService {
     }
 
     @Override
-    public void createAnswer(Answer answer) {
+    public Answer createAnswer(Answer answer) {
         answerRepo.save(answer);
-    }
-
-    @Override
-    public Iterable<Answer> getAllAnswersByQuestionId(Long questionId) {
-        Optional<Questions> optionalQuestions = questionService.findQuestionById(questionId);
-        if (optionalQuestions.isPresent()){
-            Questions questions = optionalQuestions.get();
-            Iterable<Answer> answers = questions.getAnswer();
-            return answers;
-        }
-        return null;
+        return answer;
     }
 
     @Override

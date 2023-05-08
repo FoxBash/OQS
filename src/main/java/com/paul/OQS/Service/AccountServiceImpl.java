@@ -18,8 +18,9 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void addAccount(Account account) {
+    public Account addAccount(Account account) {
         accountRepo.save(account);
+        return account;
     }
 
     @Override
@@ -35,6 +36,11 @@ public class AccountServiceImpl implements AccountService {
             return Optional.of(account);
         }
         return Optional.empty();
+    }
+
+    @Override
+    public void deleteAccountById(Long id) {
+        accountRepo.deleteById(id);
     }
 
 
